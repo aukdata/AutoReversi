@@ -1,0 +1,39 @@
+
+* {
+	user-select: none;
+}
+
+body {
+	background-color: lightgray;
+}
+
+div.module {
+	background-color: white;
+	margin: 5px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#caption {
+	text-align: center;
+}
+
+#contents {
+	margin: 0 auto;
+
+	width: 400px;
+	height: auto;
+}
+
+#board {
+	background-color: black;
+}
+
+th.square {
+	width: 50px;
+	height: 50px;
+
+	background-color: green;
+	color: green;
+	font-size: 200%;
+}

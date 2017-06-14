@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Reversi</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+	<link type="text/css" rel="stylesheet" href="style.css">
+
+	<script>
+		const log = console.log;
+	</script>
+
+	<script type="text/javascript" src="./lib/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./js/directions.js"></script>
+	<script type="text/javascript" src="./js/board.js"></script>
+	<script type="text/javascript" src="./js/AI.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+</head>
+
+<body>
+	<h1 id="caption"></h1>
+
+	<div class="module" id="contents">
+		<table id="board">
+			<tr>
+				<th class="square" id="square00">●</th><th class="square" id="square01">●</th><th class="square" id="square02">●</th><th class="square" id="square03">●</th>
+				<th class="square" id="square04">●</th><th class="square" id="square05">●</th><th class="square" id="square06">●</th><th class="square" id="square07">●</th>
+			</tr>
+			<tr>
+				<th class="square" id="square10">●</th><th class="square" id="square11">●</th><th class="square" id="square12">●</th><th class="square" id="square13">●</th>
+				<th class="square" id="square14">●</th><th class="square" id="square15">●</th><th class="square" id="square16">●</th><th class="square" id="square17">●</th>
+			</tr>
+			<tr>
+				<th class="square" id="square20">●</th><th class="square" id="square21">●</th><th class="square" id="square22">●</th><th class="square" id="square23">●</th>
+				<th class="square" id="square24">●</th><th class="square" id="square25">●</th><th class="square" id="square26">●</th><th class="square" id="square27">●</th>
+			</tr>
+			<tr>
+				<th class="square" id="square30">●</th><th class="square" id="square31">●</th><th class="square" id="square32">●</th><th class="square" id="square33">●</th>
+				<th class="square" id="square34">●</th><th class="square" id="square35">●</th><th class="square" id="square36">●</th><th class="square" id="square37">●</th>
+			</tr>
+
+			<tr>
+				<th class="square" id="square40">●</th><th class="square" id="square41">●</th><th class="square" id="square42">●</th><th class="square" id="square43">●</th>
+				<th class="square" id="square44">●</th><th class="square" id="square45">●</th><th class="square" id="square46">●</th><th class="square" id="square47">●</th>
+			</tr>
+			<tr>
+				<th class="square" id="square50">●</th><th class="square" id="square51">●</th><th class="square" id="square52">●</th><th class="square" id="square53">●</th>
+				<th class="square" id="square54">●</th><th class="square" id="square55">●</th><th class="square" id="square56">●</th><th class="square" id="square57">●</th>
+			</tr>
+			<tr>
+				<th class="square" id="square60">●</th><th class="square" id="square61">●</th><th class="square" id="square62">●</th><th class="square" id="square63">●</th>
+				<th class="square" id="square64">●</th><th class="square" id="square65">●</th><th class="square" id="square66">●</th><th class="square" id="square67">●</th>
+			</tr>
+			<tr>
+				<th class="square" id="square70">●</th><th class="square" id="square71">●</th><th class="square" id="square72">●</th><th class="square" id="square73">●</th>
+				<th class="square" id="square74">●</th><th class="square" id="square75">●</th><th class="square" id="square76">●</th><th class="square" id="square77">●</th>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>
