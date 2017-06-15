@@ -2,7 +2,7 @@ const DISK_NULL = 0;
 const DISK_BLACK = 1;
 const DISK_WHITE = -1;
 
-const SIZE = 16;
+const SIZE = 100;
 
 class Board {
 	constructor() {
@@ -25,11 +25,11 @@ class Board {
 				let tr = window.document.createElement("tr");
 
 				for(let x = 0 ; x < SIZE ; ++x) {
-					let th = window.document.createElement("th");
-					th.appendChild(window.document.createTextNode("●"));
-					th.setAttribute("class", "square");
-					th.setAttribute("id", "square_" + y + "_" + x);
-					tr.appendChild(th);
+					let td = window.document.createElement("td");
+					td.appendChild(window.document.createTextNode("●"));
+					td.setAttribute("class", "square");
+					td.setAttribute("id", "square_" + y + "_" + x);
+					tr.appendChild(td);
 				}
 				table.appendChild(tr);
 			}
