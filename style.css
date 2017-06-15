@@ -8,8 +8,11 @@ body {
 }
 
 div.module {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
 	background-color: white;
-	margin: 5px;
 	padding: 10px;
 	border-radius: 5px;
 }
@@ -19,18 +22,33 @@ div.module {
 }
 
 #contents {
-	margin: 0 auto;
+	position: absolute;
+	top: -2400px;
+	left: -2100px;
+
+	padding: 100px;
+	border-radius: 50px;
+	transform: scale(0.1);
 }
 
 #board {
 	background-color: black;
+	table-layout: fixed;
 }
 
-th.square {
+table, tr, td {
+	border-collapse: collapse;
+	border:1px solid black;
+}
+
+td.square {
+	text-align: center;
+	vertical-align: middle;
+
 	width: 50px;
 	height: 50px;
 
 	background-color: green;
 	color: green;
-	font-size: 200%;
+	font-size: xx-large;
 }
