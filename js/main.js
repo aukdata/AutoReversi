@@ -1,7 +1,3 @@
-document.addEventListener("DOMContentLoaded", function(e) {
-	board.update();
-});
-
 let aiWhite = new AI(DISK_WHITE);
 let aiBlack = new AI(DISK_BLACK);
 

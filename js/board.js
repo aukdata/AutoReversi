@@ -2,24 +2,47 @@ const DISK_NULL = 0;
 const DISK_BLACK = 1;
 const DISK_WHITE = -1;
 
+const SIZE = 16;
+
 class Board {
 	constructor() {
-		this._squares = [
-			[DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL],
-			[DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL],
-			[DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL],
-			[DISK_NULL, DISK_NULL, DISK_NULL, DISK_BLACK, DISK_WHITE, DISK_NULL, DISK_NULL, DISK_NULL],
-			[DISK_NULL, DISK_NULL, DISK_NULL, DISK_WHITE, DISK_BLACK, DISK_NULL, DISK_NULL, DISK_NULL],
-			[DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL],
-			[DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL],
-			[DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL, DISK_NULL],
-		];
-	}
+		this._squares = new Array(SIZE);
+		for(let y = 0 ; y < SIZE ; ++y) {
+			this._squares[y] = new Array(SIZE);
+			for(let x = 0 ; x < SIZE ; ++x) {
+				this._squares[y][x] = DISK_NULL;
+			}
+		}
+
+		this._squares[SIZE / 2 - 1][SIZE / 2 - 1] = DISK_BLACK;
+		this._squares[SIZE / 2][SIZE / 2 - 1] = DISK_WHITE;
+		this._squares[SIZE / 2 - 1][SIZE / 2] = DISK_WHITE;
+		this._squares[SIZE / 2][SIZE / 2] = DISK_BLACK;
+
+		document.addEventListener("DOMContentLoaded", function(e) {
+			const table = window.document.getElementById("board");
+			for(let y = 0 ; y < SIZE ; ++y) {
+				let tr = window.document.createElement("tr");
+
+				for(let x = 0 ; x < SIZE ; ++x) {
+					let th = window.document.createElement("th");
+					th.appendChild(window.document.createTextNode("●"));
+					th.setAttribute("class", "square");
+					th.setAttribute("id", "square_" + y + "_" + x);
+					tr.appendChild(th);
+				}
+				table.appendChild(tr);
+			}
+			$("#contents").css("width", "" + (50 * SIZE) + "px");
+
+			board.update();
+		});
+}
 
 	update() {
-		for(let x=0;x < 8;++x) {
-			for(let y=0;y < 8;++y) {
-				const id = "#square" + y + x;
+		for(let x = 0 ; x < SIZE ; ++x) {
+			for(let y = 0 ; y < SIZE ; ++y) {
+				const id = "#square_" + y + "_" + x;
 				const state = this._squares[y][x];
 
 				if(state == DISK_BLACK) {
@@ -34,12 +57,12 @@ class Board {
 	}
 
 	set(x, y, state) {
-		if(0 <= x && x < 8 && 0 <= y && y < 8) {
+		if(0 <= x && x < SIZE && 0 <= y && y < SIZE) {
 			board._squares[y][x] = state;
 		}
  	}
 	get(x, y) {
-		if(0 <= x && x < 8 && 0 <= y && y < 8) {
+		if(0 <= x && x < SIZE && 0 <= y && y < SIZE) {
 			return board._squares[y][x];
 		}else{
 			return DISK_NULL;
@@ -51,7 +74,7 @@ class Board {
 
 		this.set(x, y, state);
 
-		for(let i=0; i < 8; ++i) {
+		for(let i = 0 ; i < 8 ; ++i) {
 			let count = 0;
 			let cpos = {x: x, y: y};
 
@@ -95,7 +118,7 @@ class Board {
 
 		let maxcount = 0;
 
-		for(let i=0; i < 8; ++i) {
+		for(let i = 0 ; i < 8 ; ++i) {
 			let count = 0;
 			let cpos = {x: x, y: y};
 
