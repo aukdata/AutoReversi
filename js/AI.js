@@ -4,22 +4,20 @@ class AI {
 	}
 
 	place() {
-		let pos = {x: -1, y: -1};
-		let maxobtainable = 0;
+		let candidates = [];
 
 		for(let x = 0 ; x < SIZE ; ++x) {
 			for(let y = 0 ; y < SIZE ; ++y) {
 				const obtainable = board.getObtainableCount(x, y, this._disk);
-				if(obtainable > maxobtainable) {
-					maxobtainable = obtainable;
-					pos.x = x;
-					pos.y = y;
+				if(obtainable > 0) {
+					candidates.push({x: x, y: y, obtainable: obtainable});
 				}
 			}
 		}
 
-		if(maxobtainable > 0) {
-			board.place(pos.x, pos.y, this._disk);
+		if(candidates.length > 0) {
+			const candidate = candidates[Math.floor(Math.random() * candidates.length)];
+			board.place(candidate.x, candidate.y, this._disk);
 			return true;
 		}else{
 			return false;

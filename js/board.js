@@ -2,7 +2,7 @@ const DISK_NULL = 0;
 const DISK_BLACK = 1;
 const DISK_WHITE = -1;
 
-const SIZE = 100;
+const SIZE = 8;
 
 class Board {
 	constructor() {

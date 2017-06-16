@@ -8,10 +8,8 @@ body {
 }
 
 div.module {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-
+	margin: 0 auto;
+	
 	background-color: white;
 	padding: 10px;
 	border-radius: 5px;
@@ -19,16 +17,6 @@ div.module {
 
 #caption {
 	text-align: center;
-}
-
-#contents {
-	position: absolute;
-	top: -2400px;
-	left: -2100px;
-
-	padding: 100px;
-	border-radius: 50px;
-	transform: scale(0.1);
 }
 
 #board {
