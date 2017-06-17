@@ -6,8 +6,8 @@ class AI {
 	place() {
 		let candidates = [];
 
-		for(let x = 0 ; x < SIZE ; ++x) {
-			for(let y = 0 ; y < SIZE ; ++y) {
+		for(let x = 0 ; x < SQUARE_COUNT ; ++x) {
+			for(let y = 0 ; y < SQUARE_COUNT ; ++y) {
 				const obtainable = board.getObtainableCount(x, y, this._disk);
 				if(obtainable > 0) {
 					candidates.push({x: x, y: y, obtainable: obtainable});
