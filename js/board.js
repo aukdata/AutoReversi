@@ -33,13 +33,15 @@ class Board {
 				}
 				table.appendChild(tr);
 			}
-			$("#contents").css("width", "" + (50 * SIZE) + "px");
+			$("#board_module").css("width", "" + (50 * SIZE) + "px");
 
 			board.update();
 		});
 }
 
 	update() {
+		let counter = [0, 0, 0];
+
 		for(let x = 0 ; x < SIZE ; ++x) {
 			for(let y = 0 ; y < SIZE ; ++y) {
 				const id = "#square_" + y + "_" + x;
@@ -52,8 +54,12 @@ class Board {
 				}else{
 					$(id).css("color", "green");
 				}
+
+				++counter[this.get(x, y) + 1];
 			}
 		}
+
+		$("#counter").text("●x" + counter[DISK_BLACK + 1] + "	○x" + counter[DISK_WHITE + 1]);
 	}
 
 	set(x, y, state) {
@@ -140,6 +146,18 @@ class Board {
 
 	canPlace(x, y, state) {
 		return this.getMaxObtainableCount(x, y, state) > 0;
+	}
+
+	getNumber(state) {
+		let counter = 0;
+
+		for(let x = 0 ; x < SIZE ; ++x) {
+			for(let y = 0 ; y < SIZE ; ++y) {
+				++counter;
+			}
+		}
+
+		return counter;
 	}
 }
 

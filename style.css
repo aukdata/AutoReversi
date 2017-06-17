@@ -8,11 +8,14 @@ body {
 }
 
 div.module {
-	margin: 0 auto;
-	
 	background-color: white;
+	margin: 5px;
 	padding: 10px;
 	border-radius: 5px;
+}
+
+#contents {
+	margin: 0 auto;
 }
 
 #caption {
