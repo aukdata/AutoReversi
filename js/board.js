@@ -14,10 +14,10 @@ class Board {
 			}
 		}
 
-		this._squares[SIZE / 2 - 1][SIZE / 2 - 1] = DISK_BLACK;
-		this._squares[SIZE / 2][SIZE / 2 - 1] = DISK_WHITE;
-		this._squares[SIZE / 2 - 1][SIZE / 2] = DISK_WHITE;
-		this._squares[SIZE / 2][SIZE / 2] = DISK_BLACK;
+		this._squares[Math.floor(SIZE / 2) - 1][Math.floor(SIZE / 2) - 1] = DISK_BLACK;
+		this._squares[Math.floor(SIZE / 2)][Math.floor(SIZE / 2) - 1] = DISK_WHITE;
+		this._squares[Math.floor(SIZE / 2) - 1][Math.floor(SIZE / 2)] = DISK_WHITE;
+		this._squares[Math.floor(SIZE / 2)][Math.floor(SIZE / 2)] = DISK_BLACK;
 
 		document.addEventListener("DOMContentLoaded", function(e) {
 			const table = window.document.getElementById("board");

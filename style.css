@@ -14,12 +14,25 @@ div.module {
 	border-radius: 5px;
 }
 
-#contents {
-	margin: 0 auto;
-}
-
 #caption {
 	text-align: center;
+}
+
+#counter_module {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+
+	width: 150px;
+}
+
+#counter {
+	text-align: center;
+	vertical-align: middle;
+}
+
+#board_module {
+	margin: auto;
 }
 
 #board {
@@ -29,7 +42,7 @@ div.module {
 
 table, tr, td {
 	border-collapse: collapse;
-	border:1px solid black;
+	border: 1px solid black;
 }
 
 td.square {
