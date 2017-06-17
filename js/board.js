@@ -3,7 +3,8 @@ const DISK_BLACK = 1;
 const DISK_WHITE = -1;
 
 const SQUARE_COUNT = 100;
-const SQUARE_SIZE = 600 / SQUARE_COUNT;
+const BOARD_SIZE = 600;
+const SQUARE_SIZE = BOARD_SIZE / SQUARE_COUNT;
 
 class Board {
 	constructor() {
@@ -46,7 +47,10 @@ class Board {
 	}
 
 	render() {
-		this._ctx.clearRect(0, 0, 600, 600);
+		this._ctx.clearRect(0, 0, BOARD_SIZE, BOARD_SIZE);
+
+		this._ctx.fillStyle = "black";
+		this._ctx.fillRect(0, 0, BOARD_SIZE, BOARD_SIZE);
 
 		for(let x = 0 ; x < SQUARE_COUNT ; ++x) {
 			for(let y = 0 ; y < SQUARE_COUNT ; ++y) {

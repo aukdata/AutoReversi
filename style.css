@@ -18,10 +18,16 @@ div.module {
 	text-align: center;
 }
 
+#contents {
+	margin: auto;
+
+	width: 910px;
+}
+
 #counter_module {
 	position: fixed;
-	top: 0px;
-	left: 0px;
+	bottom: 0px;
+	right: 0px;
 
 	width: 150px;
 }
@@ -32,15 +38,15 @@ div.module {
 }
 
 #board_module {
-	margin: auto;
+	float: left;
 
-	width: 600px;
-	height: 600px;
+	width: 700px;
+	height: 700px;
 }
 
 #board {
 	background-color: black;
-	
-	width: 600px;
-	height: 600px;
+
+	width: 700px;
+	height: 700px;
 }
