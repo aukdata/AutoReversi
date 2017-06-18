@@ -18,9 +18,7 @@ class AI {
 		if(candidates.length > 0) {
 			const candidate = candidates[Math.floor(Math.random() * candidates.length)];
 			board.place(candidate.x, candidate.y, this._disk);
-			return true;
-		}else{
-			return false;
 		}
+		return true;
 	}
 }

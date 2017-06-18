@@ -1,18 +1,23 @@
-let aiWhite = new AI(DISK_WHITE);
-let aiBlack = new AI(DISK_BLACK);
-
-const interval = 0;
-
-let white, black;
-white = function() {
-	aiWhite.place();
-	setTimeout(black, interval);
-}
-black = function() {
-	aiBlack.place();
-	setTimeout(white, interval);
-}
-
 document.addEventListener("DOMContentLoaded", function(e) {
-	white();
+	let playerWhite = new Player(DISK_WHITE);
+	let playerBlack = new Player(DISK_BLACK);
+
+	const interval = 0;
+
+	const white = function() {
+		if(playerWhite.place()) {
+			setTimeout(black, interval);
+		}else{
+			setTimeout(white, interval);
+		}
+	}
+	const black = function() {
+		if(playerBlack.place()) {
+			setTimeout(white, interval);
+		}else{
+			setTimeout(black, interval);
+		}
+	}
+
+	black();
 });

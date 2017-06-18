@@ -5,8 +5,10 @@
 	<title>Auto Reversi</title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width,user-scalable=yes,maximum-scale=2"/>
 
 	<link type="text/css" rel="stylesheet" href="style.css">
+	<link type="text/css" rel="stylesheet" href="toggle.css">
 
 	<script>
 		const log = console.log;
@@ -16,6 +18,7 @@
 	<script type="text/javascript" src="./js/directions.js"></script>
 	<script type="text/javascript" src="./js/board.js"></script>
 	<script type="text/javascript" src="./js/AI.js"></script>
+	<script type="text/javascript" src="./js/Player.js"></script>
 	<script type="text/javascript" src="./js/main.js"></script>
 </head>
 
@@ -26,9 +29,14 @@
 			<canvas id="board"></canvas>
 		</div>
 
-				<div class="module" id="counter_module">
-					<p id="counter">●x0 ○x0</p>
-				</div>
+		<div class="module" id="control_module">
+			<p>● Auto</p><input type="checkbox" class="toggle" id="black_ai_toggle"/><label for="black_ai_toggle"></label>
+			<p>○ Auto</p><input type="checkbox" class="toggle" id="white_ai_toggle"/><label for="white_ai_toggle"></label>
+		</div>
+
+		<div class="module" id="counter_module">
+			<p id="counter">●x0 ○x0</p>
+		</div>
 
 	</div>
 </body>

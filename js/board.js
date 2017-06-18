@@ -3,7 +3,7 @@ const DISK_BLACK = 1;
 const DISK_WHITE = -1;
 
 const SQUARE_COUNT = 100;
-const BOARD_SIZE = 600;
+const BOARD_SIZE = 700;
 const SQUARE_SIZE = BOARD_SIZE / SQUARE_COUNT;
 
 class Board {
@@ -18,16 +18,17 @@ class Board {
 			}
 		}
 
-		this._squares[Math.floor(SQUARE_COUNT / 2) - 1][Math.floor(SQUARE_COUNT / 2) - 1] = DISK_BLACK;
-		this._squares[Math.floor(SQUARE_COUNT / 2)][Math.floor(SQUARE_COUNT / 2) - 1] = DISK_WHITE;
-		this._squares[Math.floor(SQUARE_COUNT / 2) - 1][Math.floor(SQUARE_COUNT / 2)] = DISK_WHITE;
-		this._squares[Math.floor(SQUARE_COUNT / 2)][Math.floor(SQUARE_COUNT / 2)] = DISK_BLACK;
+		const half = Math.floor(SQUARE_COUNT / 2);
+		this._squares[half - 1][half - 1] = DISK_BLACK;
+		this._squares[half][half - 1] = DISK_WHITE;
+		this._squares[half - 1][half] = DISK_WHITE;
+		this._squares[half][half] = DISK_BLACK;
 
 		const that = this;
 		document.addEventListener("DOMContentLoaded", function(e) {
 			let canvas = document.getElementById("board");
-			canvas.width = 600;
-			canvas.height = 600;
+			canvas.width = 700;
+			canvas.height = 700;
 			that._ctx = canvas.getContext("2d");
 			that.update();
 		});
